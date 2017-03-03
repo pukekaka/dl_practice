@@ -15,3 +15,7 @@ arr = np.array([[1., 2., 3.], [4., 5., 6.]])
 print(arr)
 print(arr*0.5)
 print(arr**0.5)
+
+tt = np.array([[1, 2, 3], [4, 5, 6]])
+print(tt.shape)
+print(len(tt))
