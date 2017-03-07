@@ -8,7 +8,7 @@ from gradient import numerical_gradient
 
 class simpleNet:
     def __init__(self):
-        self.W = np.random.randn(2,3) # 정규분포로 초기화
+        self.W = np.random.randn(2, 3) # 정규분포로 초기화
 
     def predict(self, x):
         return np.dot(x, self.W)
@@ -20,12 +20,18 @@ class simpleNet:
 
         return loss
 
-x = np.array([0.6, 0.9])
-t = np.array([0, 0, 1])
+
+def f(W):
+    x = np.array([0.6, 0.9])
+    t = np.array([0, 0, 1])
+
+    return net.loss(x, t)
+
 
 net = simpleNet()
-
-f = lambda w: net.loss(x, t)
+#p = net.predict(x)
+#print(p)
+#print(np.argmax(p))
+#print(net.loss(x, t))
 dW = numerical_gradient(f, net.W)
-
 print(dW)
