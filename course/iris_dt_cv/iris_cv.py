@@ -93,6 +93,10 @@ if __name__ == '__main__':
     scores5_mean = cross_val_score(dt, df[features], df["Target"], cv=5)
     print("cross_val_score(5-fold_means): {:.2f}".format(scores5_mean.mean()))
 
+    scores20_mean = cross_val_score(dt, df[features], df["Target"], cv=20)
+    print("cross_val_score(20-fold-means: {}".format(scores20_mean.mean()))
 
+    scores10_mean = cross_val_score(dt, df[features], df["Target"], cv=10)
+    print("cross_val_score(10-fold_means): {}".format(scores10_mean.mean()))
 
     #visualize_tree(dt, features)
