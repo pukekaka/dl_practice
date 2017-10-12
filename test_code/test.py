@@ -1,5 +1,28 @@
 import numpy as np
 
 
-dic = {'name':'pey', 'phone':'0119993323', 'birth': '1118'}
-print (dic.keys())
+numFeat = len(open("ex0.txt").readline().split('\t')) - 1
+dataMat = []; labelMat = []
+fr = open("ex0.txt")
+print (numFeat)
+for line in fr.readlines():
+    lineArr = []
+    curLine = line.strip().split('\t')
+    for i in range(numFeat):
+        lineArr.append(float(curLine[i]))
+        #print (lineArr)
+    dataMat.append(lineArr)
+    labelMat.append(float(curLine[-1]))
+    #print(dataMat)
+    print(labelMat)
+'''
+    
+    
+    
+        
+        curLine = line.strip().split('\t')
+        for i in range(numFeat):
+            lineArr.append(float(curLine[i]))
+        dataMat.append(lineArr)
+        labelMat.append(float(curLine[-1]))
+'''
