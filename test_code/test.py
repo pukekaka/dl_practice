@@ -1,9 +1,9 @@
 import numpy as np
 
 
-numFeat = len(open("ex0.txt").readline().split('\t')) - 1
+numFeat = len(open("abalone.txt").readline().split('\t')) - 1
 dataMat = []; labelMat = []
-fr = open("ex0.txt")
+fr = open("abalone.txt")
 print (numFeat)
 for line in fr.readlines():
     lineArr = []
@@ -13,8 +13,8 @@ for line in fr.readlines():
         #print (lineArr)
     dataMat.append(lineArr)
     labelMat.append(float(curLine[-1]))
-    #print(dataMat)
-    print(labelMat)
+    print(dataMat)
+    #print(labelMat)
 '''
     
     
