@@ -1,6 +1,11 @@
-import numpy as np
 
 
+
+
+
+
+
+'''
 numFeat = len(open("abalone.txt").readline().split('\t')) - 1
 dataMat = []; labelMat = []
 fr = open("abalone.txt")
@@ -15,7 +20,6 @@ for line in fr.readlines():
     labelMat.append(float(curLine[-1]))
     print(dataMat)
     #print(labelMat)
-'''
     
     
     
