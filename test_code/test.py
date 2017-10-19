@@ -35,3 +35,22 @@ for line in fr.readlines():
         dataMat.append(lineArr)
         labelMat.append(float(curLine[-1]))
 '''
+
+test_list = [1,2,3]
+dataset = [[1,1,11],
+           [1,2,12],
+           [1,3,13],
+           [1,4,14],
+           [1,5,15],
+           [1,6,16],
+           [1,7,17],
+           [1,8,18],
+           [1,9,19],
+           [2,0,20]]
+
+for i in range(len(test_list)):
+    print(i)
+    alist = [data[i] for data in dataset]
+    print(alist)
+
+print(alist)
