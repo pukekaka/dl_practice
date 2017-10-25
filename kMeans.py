@@ -3,6 +3,8 @@ import math, random
 import os
 from funct import squared_distance, vector_mean, distance
 from functools import reduce
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 class KMeans:
@@ -12,7 +14,6 @@ class KMeans:
         self.means = None
 
     def classify(self, input):
-        #print(min(range(self.k), key=lambda i: squared_distance(input, self.means[i])))
         return min(range(self.k), key=lambda i: squared_distance(input, self.means[i]))
 
     def train(self, inputs):
@@ -43,13 +44,45 @@ class KMeans:
 
 
 if __name__ == "__main__":
+    #X = -2 * np.random.rand(100, 2)
+    #X1 = 1 + 2 * np.random.rand(50, 2)
+    #X[50:100, :] = X1
 
-    inputs = [[-14,-5],[13,13],[20,23],[-19,-11],[-9,-16],[21,27],[-49,15],[26,13],[-46,5],[-34,-1],[11,15],[-49,0],[-22,-16],[19,28],[-12,-8],[-13,-19],[-41,8],[-11,-6],[-25,-9],[-18,-3]]
+    inputs = [[-14,-5],
+              [13,13],
+              [20,23],
+              [-19,-11],
+              [-9,-16],
+              [21,27],
+              [-49,15],
+              [26,13],
+              [-46,5],
+              [-34,-1],
+              [11,15],
+              [-49,0],
+              [-22,-16],
+              [19,28],
+              [-12,-8],
+              [-13,-19],
+              [-41,8],
+              [-11,-6],
+              [-25,-9],
+              [-18,-3]]
 
-    random.seed(0) # so you get the same results as me
+    #X = np.array(inputs)
+    #print X
+
+    random.seed(0)
     clusterer = KMeans(3)
     clusterer.train(inputs)
+    #clusterer = KMeans(2)
+    #clusterer.train(X)
     print ("3-means:", clusterer.means)
+
+    #plt.scatter(X[:,0], X[:,1], s=20, c='b')
+    #plt.scatter(X[:, 0], X[:, 1], s=20, c='b')
+    #plt.show()
+
 
 '''
     print "errors as a function of k"
